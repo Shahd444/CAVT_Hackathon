@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دليل البرامج حسب الاهتمامات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="bg-layer" aria-hidden="true">
+    <div class="bg-shape bg-shape-1"></div>
+    <div class="bg-shape bg-shape-2"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <main class="kiosk-shell">
+    <header class="top-bar">
+      <p class="kiosk-label">شاشة التعرف على البرامج</p>
+      <h1>اكتشف المسار الأنسب لك</h1>
+      <p id="screenHint" class="screen-hint">اختر اهتمامك للبدء.</p>
+    </header>
+
+    <section class="stage-bar" aria-label="مراحل التنقل">
+      <div id="stageInterests" class="stage-pill is-active">1. الاهتمامات</div>
+      <div id="stagePrograms" class="stage-pill">2. البرامج</div>
+      <div id="stageDetails" class="stage-pill">3. التفاصيل</div>
+    </section>
+
+    <section class="screen-head">
+      <h2 id="screenTitle">الاهتمامات</h2>
+    </section>
+
+    <section id="listView" class="touch-grid" aria-live="polite"></section>
+
+    <section id="detailsView" class="details-view" hidden aria-live="polite">
+      <article class="details-card">
+        <h3 id="programName"></h3>
+
+        <div class="detail-block">
+          <h4>ماذا ستتعلم</h4>
+          <ul id="learnList"></ul>
+        </div>
+
+        <div class="detail-block">
+          <h4>الفرص الوظيفية</h4>
+          <ul id="jobsList"></ul>
+        </div>
+
+        <div class="detail-block">
+          <h4>اماكن العمل المستقبلية</h4>
+          <ul id="workplacesList"></ul>
+        </div>
+      </article>
+    </section>
+
+    <nav class="touch-nav" aria-label="أزرار التنقل">
+      <button id="homeBtn" class="touch-btn touch-btn-home" type="button">الرئيسية</button>
+      <button id="backBtn" class="touch-btn touch-btn-back" type="button" hidden>رجوع</button>
+    </nav>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
