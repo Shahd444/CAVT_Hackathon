@@ -142,7 +142,10 @@ export default function InterestsPage({ data }) {
                         className={style.programItemButton}
                         onClick={() => setSelectedProgram(program)}
                       >
-                        {program["اسم البرنامج"]}
+                        <span className={style.programItemName}>
+                          {program["اسم البرنامج"]}
+                        </span>
+                        <span className={style.programItemAction}>عرض المزيد</span>
                       </button>
                     </li>
                   ))}
